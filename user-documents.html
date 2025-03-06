@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF-Reader - My PDF`s</title>
+    <script type="module" crossorigin src="/pdf-reader/user-documents.js"></script>
+    <link rel="stylesheet" crossorigin href="/pdf-reader/assets/styles-BbOoIKh4.css">
+  </head>
+  <body>
+    <header class="bg-gray-500">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="text-xl font-medium text-white">PDF-Reader</span>
+      </a>
+    </div>
+
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+        onclick="toggleMobileMenu()"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="size-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex lg:justify-center lg:flex-2 lg:gap-x-12">
+      <a href="/user-documents.html" class="text-sm leading-6 font-semibold text-white">My Documents</a>
+      <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
+      <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
+    </div>
+
+    <div class="hidden lg:flex lg:flex-1 lg:gap-x-5 lg:justify-end">
+      <a href="/sign-in.html" class="text-sm/6 font-semibold text-white">Log in</a>
+      <a href="#" class="text-sm/6 font-semibold text-white">Register</a>
+    </div>
+  </nav>
+
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div class="lg:hidden hidden" role="dialog" aria-modal="true" id="mobile-menu">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="flex items-center justify-between">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="text-xl font-medium text-black-500">PDF-Reader</span>
+        </a>
+        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" onclick="toggleMobileMenu()">
+          <span class="sr-only">Close menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">My Documents</a>
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+          </div>
+          <div class="py-6">
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Register</a>
+          </div>
+        </div>
+  </div>
+</header>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+
+
+    <main class="flex-grow">
+      <section class="text-center p-10 max-w-7xl mx-auto">
+  <h1 class="mb-[20px] font-bold">My Documents</h1>
+  <form
+    class="mb-2 flex max-sm:flex-col gap-[20px] max-sm:gap-[8px] justify-between"
+    method="post"
+  >
+    <div class="flex grow-7">
+      <label for="filter-selector" class="sr-only">Filter by selector</label>
+      <select
+        name="filter"
+        id="filter-selector"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-s-lg focus:ring-blue-500 focus:border-blue-500 block grow-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        required
+      >
+        <option selected>Filter by</option>
+        <option value="name">Title</option>
+        <option value="author">Author</option>
+      </select>
+      <div class="relative w-full">
+        <input
+          type="search"
+          id="search-input"
+          class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+          placeholder="Search"
+        />
+        <button
+          type="submit"
+          class="absolute top-0 end-0 p-2.5 h-full text-sm font-medium text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            class="w-4 h-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <label for="sort-selector" class="sr-only">Sort By selector</label>
+    <select
+      name="sort"
+      id="sort-selector"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block grow-3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
+      <option selected>Sorted by</option>
+      <option value="name-up">Title A to Z</option>
+      <option value="name-down">Title Z to A</option>
+      <option value="author-up">Author A to Z</option>
+      <option value="author-down">Author Z to A</option>
+      <option value="date-up">Date Up</option>
+      <option value="date-down">Date Down</option>
+    </select>
+  </form>
+  <ul class="documents-container flex flex-col gap-2 w-full">
+    <!-- <li
+      class="flex flex-col p-[16px] pr-[32px] border-solid rounded-xl outline sm:flex-row relative"
+    >
+      <h2 class="text-left grow-7">${title}</h2>
+      <div class="flex grow-0 sm:gap-[16px]">
+        <p>${author}</p>
+        <time datetime="${uploadDate}">${uploadDate}</time>
+      </div>
+      <button
+        class="absolute inset-y-0 right-[12px] transition-[scale] duration-250 ease-in-out hover:scale-[1.2]"
+        type="button"
+      >
+        <img src="/img/three-dots.svg" width="20" height="20" />
+      </button>
+    </li> -->
+  </ul>
+</section>
+
+    </main>
+
+    <footer>
+  <div>
+    <p>Made with love some text...</p>
+  </div>
+</footer>
+
+
+    <script>
+      // Функції обробки пунктів меню
+      function shareDocument(id) {
+        console.log(`Поділитися документом ${id}`);
+      }
+
+      function printDocument(id) {
+        console.log(`Друк документа ${id}`);
+      }
+
+      function saveDocument(id) {
+        console.log(`Збереження документа ${id}`);
+      }
+
+      function deleteDocument(id) {
+        console.log(`Видалення документа ${id}`);
+      }
+    </script>
+  </body>
+</html>
