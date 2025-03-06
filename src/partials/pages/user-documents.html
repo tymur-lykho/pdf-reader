@@ -1,0 +1,81 @@
+<section class="text-center p-10 max-w-7xl mx-auto">
+  <h1 class="mb-[20px] font-bold">My Documents</h1>
+  <form
+    class="mb-2 flex max-sm:flex-col gap-[20px] max-sm:gap-[8px] justify-between"
+    method="post"
+  >
+    <div class="flex grow-7">
+      <label for="filter-selector" class="sr-only">Filter by selector</label>
+      <select
+        name="filter"
+        id="filter-selector"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-s-lg focus:ring-blue-500 focus:border-blue-500 block grow-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        required
+      >
+        <option selected>Filter by</option>
+        <option value="name">Title</option>
+        <option value="author">Author</option>
+      </select>
+      <div class="relative w-full">
+        <input
+          type="search"
+          id="search-input"
+          class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+          placeholder="Search"
+        />
+        <button
+          type="submit"
+          class="absolute top-0 end-0 p-2.5 h-full text-sm font-medium text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            class="w-4 h-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <label for="sort-selector" class="sr-only">Sort By selector</label>
+    <select
+      name="sort"
+      id="sort-selector"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block grow-3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
+      <option selected>Sorted by</option>
+      <option value="name-up">Title A to Z</option>
+      <option value="name-down">Title Z to A</option>
+      <option value="author-up">Author A to Z</option>
+      <option value="author-down">Author Z to A</option>
+      <option value="date-up">Date Up</option>
+      <option value="date-down">Date Down</option>
+    </select>
+  </form>
+  <ul class="documents-container flex flex-col gap-2 w-full">
+    <!-- <li
+      class="flex flex-col p-[16px] pr-[32px] border-solid rounded-xl outline sm:flex-row relative"
+    >
+      <h2 class="text-left grow-7">${title}</h2>
+      <div class="flex grow-0 sm:gap-[16px]">
+        <p>${author}</p>
+        <time datetime="${uploadDate}">${uploadDate}</time>
+      </div>
+      <button
+        class="absolute inset-y-0 right-[12px] transition-[scale] duration-250 ease-in-out hover:scale-[1.2]"
+        type="button"
+      >
+        <img src="/img/three-dots.svg" width="20" height="20" />
+      </button>
+    </li> -->
+  </ul>
+</section>

@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
@@ -43,6 +44,7 @@ export default defineConfig(({ command }) => {
       SortCss({
         sort: 'mobile-first',
       }),
+      tailwindcss(),
     ],
   };
 });

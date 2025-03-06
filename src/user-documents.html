@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF-Reader - My PDF`s</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <load src="./partials/components/header.html" />
+
+    <main class="flex-grow">
+      <load src="./partials/pages/user-documents.html" />
+    </main>
+
+    <load src="./partials/components/footer.html" footer-text="some text..." />
+
+    <script type="module" src="./js/renders/user-document.js"></script>
+    <script>
+      // Функції обробки пунктів меню
+      function shareDocument(id) {
+        console.log(`Поділитися документом ${id}`);
+      }
+
+      function printDocument(id) {
+        console.log(`Друк документа ${id}`);
+      }
+
+      function saveDocument(id) {
+        console.log(`Збереження документа ${id}`);
+      }
+
+      function deleteDocument(id) {
+        console.log(`Видалення документа ${id}`);
+      }
+    </script>
+  </body>
+</html>
